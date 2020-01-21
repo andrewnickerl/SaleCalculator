@@ -10,12 +10,20 @@ namespace ConsoleApp3
     {
         static void Main(string[] args)
         {
-            double a, b, c;
-            b = 10;
-            c = 3;
-            c = c * b;
-            a = 10 * c % 10;
-            Console.WriteLine(a);
+            //declare needed variables
+            double price, discount, sale;  
+
+            //prompt and receive input for item price and discount
+            Console.WriteLine("Please input item price in dollars: ");
+            price = Double.Parse(Console.ReadLine());  
+            Console.WriteLine("Please input discount percent: ");
+            discount = Double.Parse(Console.ReadLine());
+
+            //change discount from percent off to decimal representation of original price
+            discount = 1 - (discount / 100);   
+            sale = price * discount;
+
+            Console.WriteLine($"The discounted price is ${sale}.");
             Console.ReadKey();
         }
     }
